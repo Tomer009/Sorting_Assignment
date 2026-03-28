@@ -35,13 +35,13 @@ python3 -m pip install numpy matplotlib
 * Bubble Sort and Selection Sort are both O(N²) algorithms. Their runtime should grow quadratically with the input size — doubling N roughly quadruples the execution time. In the plot, both curves exhibit this steep, parabolic growth pattern.
 * Quick Sort has an average-case complexity of O(N log N), which grows much more slowly.
 
-![Runtime Comparison - Random Arrays](result1.png)
+![Runtime Comparison - Random Arrays](results1.png)
 **Empirical observations:**
 * At small sizes (N ≤ 500), all three algorithms finish almost instantly and the differences are negligible.
 * As N grows toward 3 000, the O(N²) algorithms diverge sharply from Quick Sort. Bubble Sort is typically the slowest because each element may be swapped many times (one position per pass), while Selection Sort performs fewer swaps (exactly N) but the same number of comparisons.
 * Quick Sort's runtime remains low throughout, confirming its O(N log N) average behaviour. The randomised pivot selection prevents worst-case degradation on these random inputs.
 
-![Runtime Comparison - Nearly Sorted](result2.png)
+![Runtime Comparison - Nearly Sorted](results2.png)
 ## Part C – Nearly Sorted Array Results
 **Key observations compared to random arrays:**
 
