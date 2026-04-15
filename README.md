@@ -1,6 +1,6 @@
 # Sorting Algorithms – Benchmarking Assignment
 
-**Student Name:** Tomer Bachar, 322884974 – Ben Gurion University EE Student
+**Student Names:** Tomer Bachar, 322884974 / Hile Husni, 206405201
 
 
 ## Selected Algorithms
