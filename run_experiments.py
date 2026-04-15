@@ -1,18 +1,3 @@
-"""
-Data Structures Assignment
-
-Usage examples
---------------
-# Part B – completely random arrays:
-    python3 run_experiments.py -a 1 2 5 -s 100 500 1000 3000 -r 20
-
-# Part C – nearly sorted arrays (5 % noise):
-    python3 run_experiments.py -a 1 2 5 -s 100 500 1000 3000 -e 1 -r 20
-
-# Part C – nearly sorted arrays (20 % noise):
-    python3 run_experiments.py -a 1 2 5 -s 100 500 1000 3000 -e 2 -r 20
-"""
-
 import argparse
 import random
 import time
@@ -125,11 +110,6 @@ ALGORITHMS = {
 
 
 
-
-# ---------------------------------------------------------------------------
-# Array Generation Helpers
-# ---------------------------------------------------------------------------
-
 def generate_random_array(size):
     """Return a list of random integers in [0, 1000000]."""
     return [random.randint(0, 1000000) for _ in range(size)]
@@ -152,37 +132,7 @@ def generate_nearly_sorted_array(size, noise_fraction):
 
 
 
-
-# ---------------------------------------------------------------------------
-# Benchmarking
-# ---------------------------------------------------------------------------
-
 def benchmark(algo_ids, sizes, repetitions, experiment_type):
-    """
-    Run the sorting experiments and return timing statistics.
-
-    Parameters
-    ----------
-    algo_ids : list[int]
-        Algorithm IDs to benchmark (keys in ALGORITHMS).
-
-    sizes : list[int]
-        Array sizes to test.
-
-    repetitions : int
-        How many times to repeat each (algorithm, size) pair.
-
-    experiment_type : int / None
-        None  -> fully random arrays (Part B).
-        1     -> nearly sorted, 5 % noise (Part C).
-        2     -> nearly sorted, 20 % noise (Part C).
-
-    Returns
-    -------
-    results : dict
-        {algo_id: {"mean": np.array, "std": np.array}} keyed by algo_id,
-        where each array has one entry per size.
-    """
 
     # Decide array generation strategy
     if experiment_type == 1:
@@ -221,11 +171,6 @@ def benchmark(algo_ids, sizes, repetitions, experiment_type):
 
 
 
-
-
-# ---------------------------------------------------------------------------
-# Plotting
-# ---------------------------------------------------------------------------
 
 def plot_results(results, sizes, experiment_type):
     """
@@ -269,11 +214,6 @@ def plot_results(results, sizes, experiment_type):
 
 
 
-
-
-# ---------------------------------------------------------------------------
-# Command Line Interface
-# ---------------------------------------------------------------------------
 
 def parse_args():
     """
@@ -327,9 +267,7 @@ def parse_args():
     return parser.parse_args()
 
 
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
+
 
 def main():
     args = parse_args()
@@ -337,7 +275,7 @@ def main():
     # Increase recursion limit for Quick Sort on larger arrays
     sys.setrecursionlimit(max(10000, max(args.s) * 3))
 
-    # Pretty-print the experiment configuration
+    # print the experiment configuration
     algo_names = [ALGORITHMS[a][0] for a in args.a]
     exp_label = {None: "Random", 1: "Nearly sorted (5% noise)",
                  2: "Nearly sorted (20% noise)"}
