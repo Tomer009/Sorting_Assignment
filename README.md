@@ -1,6 +1,6 @@
 # Sorting Algorithms – Benchmarking Assignment
 
-**Student Names:** Tomer Bachar, 322884974 / Hile Husni, 206405201
+**Student Names:** Tomer Bachar, 322884974 / Hile Hasni, 206405201
 
 
 ## Selected Algorithms
